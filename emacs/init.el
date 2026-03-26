@@ -1,6 +1,10 @@
 ;; Suppress native-comp warnings (treesit, python, etc.)
 (setq native-comp-async-report-warnings-errors 'silent)
 
+;; Custom variables in separate file
+(setq custom-file (expand-file-name "~/.config/emacs/custom-variables.el"))
+(load custom-file 'noerror)
+
 ;; Package setup
 (require 'package)
 (setq package-archives
@@ -63,8 +67,8 @@
   (pdf-loader-install))
 
 ;; simpc-mode setup
-(add-to-list 'load-path (expand-file-name "~/.config/emacs/"))
-(when (file-exists-p (expand-file-name "~/.config/emacs/simpc-mode.el"))
+(add-to-list 'load-path (expand-file-name "~/.config/emacs/lisp/"))
+(when (file-exists-p (expand-file-name "~/.config/emacs/lisp/simpc-mode.el"))
   (require 'simpc-mode)
   (add-to-list 'auto-mode-alist '("\\.[hc]\\(pp\\)?\\'" . simpc-mode)))
 

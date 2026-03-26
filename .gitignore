@@ -31,7 +31,10 @@
 
 /emacs/*
 !/emacs/init.el
-!/emacs/simpc-mode.el
+!/emacs/custom-variables.el
+!/emacs/lisp/
+/emacs/lisp/*
+!/emacs/lisp/simpc-mode.el
 
 /fish/*
 !/fish/config.fish
