@@ -1,0 +1,67 @@
+{
+    "reload_style_on_change": true,	
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "spacing": 4,
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock", "custom/weather","custom/mpcprev","custom/mpc", "custom/mpcnext"],
+    "modules-right": ["network", "cpu", "memory", "temperature", "tray"],
+    // --- CENTER MODULES ---
+    "clock": {
+        "format": "  {:%H:%M  %a %d %b}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "custom/weather": {
+        "format": "{}",
+        "tooltip": true,
+        "interval": 1800,
+        "exec": "~/.config/scripts/weather.sh"
+    },
+
+"custom/mpcprev": {
+    "format": "", 
+    "on-click": "mpc prev",
+    "tooltip": false
+},
+"custom/mpcnext": {
+    "format": "", 
+    "on-click": "mpc next",
+    "tooltip": false
+},
+"custom/mpc": {
+    "format": "{}",
+    "exec": "~/.config/scripts/mpc_status.sh",
+    "on-click": "mpc toggle",
+    "exec-on-event": false,
+    "tooltip": false
+},
+
+    // --- RIGHT MODULES ---
+    "network": {
+        "format-wifi": "  {essid}",
+        "format-ethernet": "󰈀  {ipaddr}",
+        "format-disconnected": "⚠ Disconnected",
+        "tooltip-format": "{ifname} via {gwaddr}"
+    },
+
+    "cpu": {
+        "format": "  {usage}%",
+        "tooltip": false
+    },
+
+    "memory": {
+        "format": "  {}%"
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    }
+}

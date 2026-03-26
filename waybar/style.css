@@ -1,0 +1,126 @@
+* {
+    font-family: "IBM Plex Mono", "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+}
+
+#workspaces {
+    background-color: rgba(49, 50, 68, 0.5);
+    margin: 4px 5px;
+    padding: 0 5px;
+    border-radius: 10px;
+}
+
+/* Fix for Workspace Numbers */
+#workspaces button {
+    padding: 0 8px;
+    color: #585b70; /* Surface2 - Dimmer color for inactive workspaces */
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+    color: #cba6f7; /* Mauve - Replaces the green for the active workspace */
+    background: rgba(49, 50, 68, 0.8); /* Slightly darker surface for focus */
+    border-radius: 8px;
+    box-shadow: inset 0 -2px #b4befe; /* Subtle Lavender underline for focus */
+}
+
+#workspaces button:hover {
+    color: #f5c2e7; /* Pink - Highlight on hover */
+    background: rgba(180, 190, 254, 0.1);
+    border-radius: 8px;
+}
+
+#workspaces button.urgent {
+    color: #f38ba8; /* Red - For windows needing attention */
+}
+
+window#waybar {
+    background-color: rgba(30, 30, 46, 0.8); /* Semi-transparent dark */
+    color: #cdd6f4;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+#window {
+    color: #bac2de; /* Subtext1 - A soft, clean white/blue tint */
+    background: transparent;
+    padding: 0 15px;
+    margin: 4px 10px;
+    font-weight: bold;
+    /* Optional: subtle shadow to make text pop against wallpaper */
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.4); 
+    transition: all 0.3s ease;
+}
+
+/* If the bar is empty, hide the module margin */
+window#waybar.empty #window {
+    background-color: transparent;
+}
+
+/* Center Modules (Clock & Weather) */
+#clock, #custom-weather {
+    padding: 0 15px;
+    color: #f5c2e7; /* Pink accent */
+    background: rgba(49, 50, 68, 0.5);
+    margin: 4px 2px;
+    border-radius: 8px;
+}
+
+/* Right Modules (Network, Stats) */
+#network, #cpu, #memory, #temperature {
+    padding: 0 10px;
+    margin: 4px 2px;
+    background: rgba(49, 50, 68, 0.5);
+    border-radius: 8px;
+}
+
+#cpu { color: #fab387; }
+#memory { color: #a6e3a1; }
+#temperature { color: #f38ba8; }
+#network { color: #89b4fa; }
+
+#tray {
+    margin: 4px 10px;
+}
+#custom-mpcprev {
+    padding: 0 15px;
+    margin: 4px 2px;
+    background: rgba(49, 50, 68, 0.5); /* Matching your other modules */
+    color: #b4befe; /* Lavender accent */
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+#custom-mpcprev:hover {
+    background: rgba(180, 190, 254, 0.2); /* Light lavender tint on hover */
+    color: #cdd6f4; /* Brighten text on hover */
+}
+#custom-mpc {
+    padding: 0 15px;
+    margin: 4px 2px;
+    background: rgba(49, 50, 68, 0.5); /* Matching your other modules */
+    color: #b4befe; /* Lavender accent */
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+#custom-mpc:hover {
+    background: rgba(180, 190, 254, 0.2); /* Light lavender tint on hover */
+    color: #cdd6f4; /* Brighten text on hover */
+}
+#custom-mpcnext {
+    padding: 0 15px;
+    margin: 4px 2px;
+    background: rgba(49, 50, 68, 0.5); /* Matching your other modules */
+    color: #b4befe; /* Lavender accent */
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+#custom-mpcnext:hover {
+    background: rgba(180, 190, 254, 0.2); /* Light lavender tint on hover */
+    color: #cdd6f4; /* Brighten text on hover */
+}

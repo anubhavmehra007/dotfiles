@@ -1,0 +1,46 @@
+# Ignore everything
+/*
+
+# Track these directories
+!/mpd/
+!/waybar/
+!/hypr/
+!/rmpc/
+!/emacs/
+!/fish/
+!/kitty/
+!/scripts/
+!/.gitignore
+
+# Within tracked directories, only keep config files
+/mpd/*
+!/mpd/mpd.conf
+
+/waybar/*
+!/waybar/config
+!/waybar/style.css
+
+/hypr/*
+!/hypr/*.conf
+
+/rmpc/*
+!/rmpc/config.ron
+!/rmpc/themes/
+/rmpc/themes/*
+!/rmpc/themes/*.ron
+
+/emacs/*
+!/emacs/init.el
+!/emacs/simpc-mode.el
+
+/fish/*
+!/fish/config.fish
+!/fish/fish_plugins
+
+/kitty/*
+!/kitty/kitty.conf
+!/kitty/theme.conf
+!/kitty/current-theme.conf
+
+/scripts/*
+!/scripts/*.sh
