@@ -11,6 +11,7 @@
 !/kitty/
 !/scripts/
 !/.gitignore
+!/README.md
 
 # Within tracked directories, only keep config files
 /mpd/*
