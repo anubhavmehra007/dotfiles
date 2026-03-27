@@ -38,7 +38,7 @@
 (global-auto-revert-mode 1)
 (column-number-mode 1)
 (setq use-dialog-box nil)
-
+(add-to-list 'default-frame-alist '(alpha-background . 90))
 ;; Font
 (set-face-attribute 'default nil
                     :family "IBM Plex Mono"
