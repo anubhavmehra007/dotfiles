@@ -67,11 +67,10 @@
   (pdf-loader-install))
 
 ;; simpc-mode setup
-(add-to-list 'load-path (expand-file-name "~/.config/emacs/lisp/"))
-(when (file-exists-p (expand-file-name "~/.config/emacs/lisp/simpc-mode.el"))
-  (require 'simpc-mode)
-  (add-to-list 'auto-mode-alist '("\\.[hc]\\(pp\\)?\\'" . simpc-mode)))
-
+;; (add-to-list 'load-path (expand-file-name "~/.config/emacs/lisp/"))
+;; (when (file-exists-p (expand-file-name "~/.config/emacs/lisp/simpc-mode.el"))
+;;   (require 'simpc-mode)
+;;   (add-to-list 'auto-mode-alist '("\\.[hc]\\(pp\\)?\\'" . simpc-mode)))
 
 ;; Multiple cursors
   (require 'multiple-cursors)
@@ -118,3 +117,9 @@
     (add-hook 'simpc-mode-hook
               (lambda ()
                 (add-hook 'before-save-hook #'clang-format-buffer nil t))))
+
+;;startup screen changes
+(setq inhibit-startup-screen t)
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (recentf-open-files)))
