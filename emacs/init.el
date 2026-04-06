@@ -31,8 +31,7 @@
 (menu-bar-mode -1)
 (require 'recentf)
 (recentf-mode 1)
-(ido-mode 1)
-(ido-everywhere 1)
+(fido-vertical-mode 1)
 (global-display-line-numbers-mode 1)
 (save-place-mode 1)
 (global-auto-revert-mode 1)
@@ -114,7 +113,7 @@
 (when (and (executable-find "clang-format")
            (require 'clang-format nil 'noerror)
            )
-    (add-hook 'simpc-mode-hook
+    (add-hook 'c-mode-common-hook
               (lambda ()
                 (add-hook 'before-save-hook #'clang-format-buffer nil t))))
 
@@ -123,3 +122,20 @@
 (add-hook 'emacs-startup-hook
           (lambda ()
             (recentf-open-files)))
+
+;;Completion Preview Mode
+(add-hook 'prog-mode-hook #'completion-preview-mode)
+(add-hook 'text-mode-hook #'completion-preview-mode)
+(with-eval-after-load 'completion-preview
+  (setq completion-preview-minimum-symbol-length 2)
+  (push 'org-self-insert-command completion-preview-commands)
+  (push 'paredit-backward-delete completion-preview-commands)
+  (keymap-set completion-preview-active-mode-map "M-n" #'completion-preview-next-candidate)
+  (keymap-set completion-preview-active-mode-map "M-p" #'completion-preview-prev-candidate)
+  (keymap-set completion-preview-active-mode-map "M-i" #'completion-preview-insert))
+
+
+;; Hopefully won't open a new window now
+(setq display-buffer-alist
+      '(("\\*\\(compilation\\|grep\\|Occur\\|Help\\|gud-\\|Backtrace\\)\\*"
+         (display-buffer-same-window))))
