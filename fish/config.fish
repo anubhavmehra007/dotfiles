@@ -1,4 +1,8 @@
 source /usr/share/cachyos-fish-config/cachyos-config.fish
+
+# Use vi-style keybindings in the shell
+set -g fish_key_bindings fish_vi_key_bindings
+
 function fish_greeting
     # Catppuccin Mocha Colors
     set -l mauve (set_color cba6f7)   # Main Art
