@@ -10,6 +10,7 @@
 !/fish/
 !/kitty/
 !/nvim/
+!/gitui/
 !/scripts/
 !/.gitignore
 !/README.md
@@ -53,3 +54,7 @@
 /nvim/*
 !/nvim/init.lua
 !/nvim/nvim-pack-lock.json
+
+
+/gitui/*
+!/gitui/theme.ron
