@@ -9,6 +9,7 @@
 !/emacs/
 !/fish/
 !/kitty/
+!/nvim/
 !/scripts/
 !/.gitignore
 !/README.md
@@ -48,3 +49,7 @@
 
 /scripts/*
 !/scripts/*.sh
+
+/nvim/*
+!/nvim/init.lua
+!/nvim/nvim-pack-lock.json
